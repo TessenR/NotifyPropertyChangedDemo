@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
@@ -15,6 +16,8 @@ namespace NotifyPropertyChangedGenerator
 
     public void Execute(GeneratorExecutionContext context)
     {
+      // uncomment to debug the actual build of the target project
+      // Debugger.Launch();
       var compilation = context.Compilation;
       var notifyInterface = compilation.GetTypeByMetadataName("System.ComponentModel.INotifyPropertyChanged");
 
